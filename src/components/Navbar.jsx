@@ -31,7 +31,7 @@ const Navbar = () => {
               </div>
               <div className="flex items-center space-x-1">
                 <MapPin className="h-4 w-4" />
-                <span>Lisboa, Portugal</span>
+                <span> R. Ferreira Castro, 4520-227 Santa Maria da Feira</span>
               </div>
             </div>
             <div className="hidden md:block text-yellow-700">
