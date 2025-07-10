@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import Services from './pages/Services'
 import About from './pages/About'
 import Gallery from './pages/Gallery'
-import Booking from './pages/Booking'
+// import Booking from './pages/Booking'
 import Contact from './pages/Contact'
 import WhatsAppButton from './components/WhatsAppButton'
 import './App.css'
@@ -21,7 +21,7 @@ function App() {
             <Route path="/servicos" element={<Services />} />
             <Route path="/sobre" element={<About />} />
             <Route path="/galeria" element={<Gallery />} />
-            <Route path="/marcacao" element={<Booking />} />
+            {/* <Route path="/marcacao" element={<Booking />} /> */}
             <Route path="/contactos" element={<Contact />} />
           </Routes>
         </main>
