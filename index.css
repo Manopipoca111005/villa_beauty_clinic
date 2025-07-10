@@ -1,0 +1,13 @@
+/* index.css - global styles for Villa Beauty Clinic */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: #f8fafc;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
