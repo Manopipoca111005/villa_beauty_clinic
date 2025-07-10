@@ -35,7 +35,7 @@ const Navbar = () => {
               </div>
             </div>
             <div className="hidden md:block text-yellow-700">
-              Ter-Sex: 11h-20h | Sáb: 11h-14h
+              Ter-Sex: 11h-20h | Sáb: 9h-14h
             </div>
           </div>
         </div>

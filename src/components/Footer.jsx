@@ -82,15 +82,15 @@ const Footer = () => {
             <div className="space-y-2 mb-6">
               <div className="flex items-center space-x-2 text-sm">
                 <Clock className="h-4 w-4 text-yellow-700" />
-                <span className="text-gray-300">Seg-Sex: 9h-19h</span>
+                <span className="text-gray-300">Ter-Sex: 11h-20h</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Clock className="h-4 w-4 text-yellow-700" />
-                <span className="text-gray-300">Sábado: 9h-17h</span>
+                <span className="text-gray-300">Sábado: 9h-14h</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Clock className="h-4 w-4 text-yellow-700" />
-                <span className="text-gray-300">Domingo: Fechado</span>
+                <span className="text-gray-300">Dom-Seg: Fechado</span>
               </div>
             </div>
 
