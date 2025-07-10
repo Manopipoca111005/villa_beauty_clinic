@@ -16,7 +16,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              A sua clínica de estética e beleza de confiança em Lisboa.
+              A sua clínica de estética e beleza de confiança em Santa Maria da Feira.
               Oferecemos tratamentos de qualidade com tecnologia avançada
               e profissionais especializados.
             </p>
@@ -69,8 +69,8 @@ const Footer = () => {
               <li className="flex items-start space-x-2 text-sm">
                 <MapPin className="h-4 w-4 text-yellow-700 mt-0.5" />
                 <span className="text-gray-300">
-                  Rua da Beleza, 123<br />
-                  1000-001 Lisboa
+                   R. Ferreira Castro<br />
+                   4520-227 Santa Maria da Feira
                 </span>
               </li>
             </ul>

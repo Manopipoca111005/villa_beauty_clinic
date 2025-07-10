@@ -57,7 +57,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Morada',
-      details: ['Rua da Beleza, 123', '1000-001 Lisboa', 'Portugal'],
+      details: ['R. Ferreira Castro', '4520-227 Santa Maria da Feira', 'Portugal'],
       action: 'https://maps.google.com'
     },
     {
@@ -149,7 +149,7 @@ const Contact = () => {
                 <div className="text-center">
                   <MapPin className="h-12 w-12 text-gray-500 mx-auto mb-4" />
                   <p className="text-gray-600">Mapa Interativo</p>
-                  <p className="text-sm text-gray-500">Rua da Beleza, 123, Lisboa</p>
+                  <p className="text-sm text-gray-500">R. Ferreira Castro, 4520-227 Santa Maria da Feira</p>
                 </div>
               </div>
 
@@ -385,10 +385,10 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Visite-nos em Lisboa
+                Visite-nos em Santa Maria da Feira
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                A nossa clínica está localizada numa zona privilegiada de Lisboa, 
+                A nossa clínica está localizada numa zona privilegiada de Santa Maria da Feira, 
                 facilmente acessível por transportes públicos e com estacionamento 
                 disponível. Venha conhecer as nossas modernas instalações.
               </p>

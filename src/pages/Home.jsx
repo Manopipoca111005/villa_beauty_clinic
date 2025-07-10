@@ -53,7 +53,7 @@ const Home = () => {
     },
     {
       name: 'Sofia Santos',
-      text: 'A melhor clínica de estética de Lisboa. Resultados fantásticos!',
+      text: 'A melhor clínica de estética de Santa Maria da Feira. Resultados fantásticos!',
       rating: 5
     }
   ]
@@ -114,7 +114,7 @@ const Home = () => {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-700"> Villa Beauty Clinic</span>
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Somos uma clínica de estética e beleza localizada no coração de Lisboa, 
+                Somos uma clínica de estética e beleza localizada no coração de Santa Maria da Feira, 
                 dedicada a proporcionar tratamentos de qualidade superior com tecnologia 
                 de ponta e uma equipa de profissionais altamente qualificados.
               </p>

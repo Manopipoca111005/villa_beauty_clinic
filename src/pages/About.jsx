@@ -159,7 +159,7 @@ const About = () => {
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Nossa Visão</h2>
               <p className="text-gray-600 leading-relaxed">
-                Ser reconhecida como a clínica de estética de referência em Lisboa,
+                Ser reconhecida como a clínica de estética de referência em Santa Maria da Feira,
                 destacando-nos pela inovação, qualidade dos serviços e satisfação
                 dos nossos clientes, contribuindo para o seu bem-estar e confiança.
               </p>
