@@ -46,7 +46,7 @@ export default function Contact() {
     {
       icon: Phone,
       title: 'Telefone',
-      details: ['+351 2 248 032', '+351 987 654 321'],
+      details: ['+351 912 248 032', '+351 987 654 321'],
       action: 'tel:+351912248032'
     },
     {
