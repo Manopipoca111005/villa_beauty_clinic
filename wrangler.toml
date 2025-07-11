@@ -1,0 +1,10 @@
+name = "villa-beauty-clinic"
+compatibility_date = "2024-07-11"
+compatibility_flags = ["nodejs_compat"]
+
+# Force static site deployment
+pages_build_output_dir = "out"
+
+[build]
+command = "npm run build"
+destination = "out"
