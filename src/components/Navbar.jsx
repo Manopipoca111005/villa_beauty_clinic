@@ -1,11 +1,13 @@
+'use client'
+
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Menu, X, Phone, MapPin } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const location = useLocation()
+  const pathname = usePathname()
 
   const navigation = [
     { name: 'Início', href: '/' },
@@ -16,7 +18,7 @@ const Navbar = () => {
     { name: 'Contactos', href: '/contactos' },
   ]
 
-  const isActive = (path) => location.pathname === path
+  const isActive = (path) => pathname === path
 
   return (
     <>
@@ -46,8 +48,8 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2">
-              <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Villa Beauty Clinic Logo" className="w-12 h-12 object-contain" />
+            <Link href="/" className="flex items-center space-x-2">
+              <img src="/logo.png" alt="Villa Beauty Clinic Logo" className="w-12 h-12 object-contain" />
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">Villa Beauty</h1>
                 <p className="text-sm text-yellow-700 -mt-1">Clinic</p>
@@ -59,7 +61,7 @@ const Navbar = () => {
               {navigation.map((item) => (
                 <Link
                   key={item.name}
-                  to={item.href}
+                  href={item.href}
                   className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${isActive(item.href)
                       ? 'text-yellow-700 border-b-2 border-yellow-700'
                       : 'text-gray-700 hover:text-yellow-700'
@@ -72,12 +74,12 @@ const Navbar = () => {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <Button
-                asChild
-                className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-6 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+              <Link 
+                href="/servicos"
+                className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-6 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl inline-block"
               >
-                <Link to="/servicos">Marcar Consulta</Link>
-              </Button>
+                Marcar Consulta
+              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -99,7 +101,7 @@ const Navbar = () => {
               {navigation.map((item) => (
                 <Link
                   key={item.name}
-                  to={item.href}
+                  href={item.href}
                   onClick={() => setIsOpen(false)}
                   className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${isActive(item.href)
                       ? 'text-yellow-700 bg-white'
@@ -110,12 +112,13 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className="px-3 py-2">
-                <Button
-                  asChild
-                  className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-6 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+                <Link 
+                  href="/servicos" 
+                  onClick={() => setIsOpen(false)}
+                  className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-6 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl inline-block"
                 >
-                  <Link to="/servicos" onClick={() => setIsOpen(false)}>Marcar Consulta</Link>
-                </Button>
+                  Marcar Consulta
+                </Link>
               </div>
             </div>
           </div>

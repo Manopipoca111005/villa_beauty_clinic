@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { Phone, Mail, MapPin, Instagram, Facebook, Clock } from 'lucide-react'
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Logo e Descrição */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Villa Beauty Clinic Logo" className="w-10 h-10 object-contain" />
+              <img src="/logo.png" alt="Villa Beauty Clinic Logo" className="w-10 h-10 object-contain" />
               <div>
                 <h3 className="text-xl font-bold">Villa Beauty</h3>
                 <p className="text-yellow-700 text-sm">Clinic</p>
@@ -27,28 +27,28 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4 text-yellow-700">Links Rápidos</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-yellow-700 transition-colors text-sm">
+                <Link href="/" className="text-gray-300 hover:text-yellow-700 transition-colors text-sm">
                   Início
                 </Link>
               </li>
               <li>
-                <Link to="/servicos" className="text-gray-300 hover:text-yellow-700 transition-colors text-sm">
+                <Link href="/servicos" className="text-gray-300 hover:text-yellow-700 transition-colors text-sm">
                   Serviços
                 </Link>
               </li>
               <li>
-                <Link to="/sobre" className="text-gray-300 hover:text-yellow-700 transition-colors text-sm">
+                <Link href="/sobre" className="text-gray-300 hover:text-yellow-700 transition-colors text-sm">
                   Sobre Nós
                 </Link>
               </li>
               <li>
-                <Link to="/galeria" className="text-gray-300 hover:text-yellow-700 transition-colors text-sm">
+                <Link href="/galeria" className="text-gray-300 hover:text-yellow-700 transition-colors text-sm">
                   Galeria
                 </Link>
               </li>
               <li>
-                <Link to="/marcacao" className="text-gray-300 hover:text-yellow-700 transition-colors text-sm">
-                  Marcação
+                <Link href="/contactos" className="text-gray-300 hover:text-yellow-700 transition-colors text-sm">
+                  Contactos
                 </Link>
               </li>
             </ul>
