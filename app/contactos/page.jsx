@@ -46,8 +46,8 @@ export default function Contact() {
     {
       icon: Phone,
       title: 'Telefone',
-      details: ['+351 916 248 032', '+351 987 654 321'],
-      action: 'tel:+351916248032'
+      details: ['+351 2 248 032', '+351 987 654 321'],
+      action: 'tel:+351912248032'
     },
     {
       icon: Mail,
@@ -335,7 +335,7 @@ export default function Contact() {
                 asChild
                 className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white rounded-full"
               >
-                <a href="https://wa.me/351916248032" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/351912248032" target="_blank" rel="noopener noreferrer">
                   Enviar Mensagem
                 </a>
               </Button>
