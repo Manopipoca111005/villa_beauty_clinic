@@ -12,6 +12,31 @@
 			"group": "build",
 			"isBackground": true,
 			"problemMatcher": []
+		},
+		{
+			"label": "Build and Serve",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [],
+			"problemMatcher": []
+		},
+		{
+			"label": "Serve Built App",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"start"
+			],
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": []
 		}
 	]
 }
