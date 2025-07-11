@@ -2,9 +2,11 @@ const path = require('path')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Configuração para imagens se necessário
+  output: 'export',
+  trailingSlash: true,
+  // Configuração para imagens
   images: {
-    domains: ['localhost'],
+    unoptimized: true
   },
   webpack: (config) => {
     config.resolve.alias = {

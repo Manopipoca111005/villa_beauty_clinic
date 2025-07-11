@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Button } from '../../src/components/ui/button'
 import Link from 'next/link'
@@ -16,7 +16,7 @@ import {
   Star
 } from 'lucide-react'
 
-export default function Services() {
+function ServicesContent() {
   const searchParams = useSearchParams()
   
   // Função para extrair o parâmetro da URL
@@ -257,5 +257,13 @@ export default function Services() {
         </div>
       </section>
     </div>
+  )
+}
+
+export default function Services() {
+  return (
+    <Suspense fallback={<div>Carregando...</div>}>
+      <ServicesContent />
+    </Suspense>
   )
 }
