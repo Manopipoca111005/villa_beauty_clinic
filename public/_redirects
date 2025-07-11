@@ -1,0 +1,11 @@
+# Cloudflare Pages redirects
+# Garantir que todas as imagens sejam servidas corretamente
+/*.jpg /[file] 200
+/*.jpeg /[file] 200
+/*.png /[file] 200
+/*.gif /[file] 200
+/*.svg /[file] 200
+/*.ico /[file] 200
+
+# Fallback para outras rotas
+/* /index.html 200

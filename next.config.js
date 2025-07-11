@@ -4,6 +4,7 @@ const path = require('path')
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  assetPrefix: '',
   // Configuração para imagens
   images: {
     unoptimized: true
@@ -13,6 +14,16 @@ const nextConfig = {
       ...config.resolve.alias,
       '@': path.resolve(__dirname, './src'),
     }
+    
+    // Configuração adicional para assets estáticos
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif|svg)$/,
+      type: 'asset/resource',
+      generator: {
+        filename: '[name][ext]'
+      }
+    })
+    
     return config
   },
 }
