@@ -49,7 +49,7 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
-              <img src="/src/assets/logo.png" alt="Villa Beauty Clinic Logo" className="w-12 h-12 object-contain" />
+              <img src="/logo.png" alt="Villa Beauty Clinic Logo" className="w-12 h-12 object-contain" />
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">Villa Beauty</h1>
                 <p className="text-sm text-yellow-700 -mt-1">Clinic</p>

@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Logo e Descrição */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <img src="/src/assets/logo.png" alt="Villa Beauty Clinic Logo" className="w-10 h-10 object-contain" />
+              <img src="/logo.png" alt="Villa Beauty Clinic Logo" className="w-10 h-10 object-contain" />
               <div>
                 <h3 className="text-xl font-bold">Villa Beauty</h3>
                 <p className="text-yellow-700 text-sm">Clinic</p>
