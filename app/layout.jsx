@@ -8,9 +8,13 @@ export const metadata = {
   description: 'Clínica de estética com tratamentos de alta qualidade',
 }
 
+
 export default function RootLayout({ children }) {
   return (
     <html lang="pt">
+      <head>
+        <link rel="preload" href="/logo.png" as="image" />
+      </head>
       <body>
         <div className="min-h-screen bg-white overflow-x-hidden">
           <Navbar />
