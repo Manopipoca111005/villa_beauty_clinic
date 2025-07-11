@@ -8,10 +8,6 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  // Configuração para Cloudflare Pages
-  experimental: {
-    runtime: 'nodejs'
-  },
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
