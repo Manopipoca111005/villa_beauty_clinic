@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Phone, Mail, MapPin, Instagram, Facebook, Clock } from 'lucide-react'
 
 const Footer = () => {
@@ -9,7 +10,13 @@ const Footer = () => {
           {/* Logo e Descrição */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <img src="/logo.png" alt="Villa Beauty Clinic Logo" className="w-10 h-10 object-contain" />
+              <Image 
+                src="/logo.png" 
+                alt="Villa Beauty Clinic Logo" 
+                width={40}
+                height={40}
+                className="object-contain" 
+              />
               <div>
                 <h3 className="text-xl font-bold">Villa Beauty</h3>
                 <p className="text-yellow-700 text-sm">Clinic</p>
