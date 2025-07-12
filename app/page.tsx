@@ -15,7 +15,7 @@ export default function Home() {
       title: 'Tratamentos Faciais',
       description: 'Rejuvenescimento e cuidados especializados para o rosto',
       image: '/facial-treatment.jpg',
-      features: ['Limpeza Profunda', 'Hidratação', 'Anti-idade']
+      features: ['Limpeza Profunda', 'Hidratação', 'Anti-idade oi']
     },
     {
       title: 'Laser Estético',
