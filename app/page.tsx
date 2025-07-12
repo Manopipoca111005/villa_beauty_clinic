@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import Link from 'next/link'
 import { Button } from '../components/ui/button'
 import { Star, Award, Users, Clock, ArrowRight, CheckCircle } from 'lucide-react'
