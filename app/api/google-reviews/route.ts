@@ -47,33 +47,80 @@ async function findVillaBeautyPlaceId(apiKey: string) {
 
 export async function GET(request: NextRequest) {
   try {
-    if (!GOOGLE_API_KEY) {
+    console.log('=== Google Reviews API Debug ===')
+    console.log('GOOGLE_API_KEY exists:', !!GOOGLE_API_KEY)
+    console.log('PLACE_ID:', PLACE_ID)
+    
+    if (!GOOGLE_API_KEY || GOOGLE_API_KEY === 'your_google_places_api_key_here') {
+      console.log('Error: Google API key não configurada ou usando placeholder')
       return NextResponse.json(
-        { error: 'Google API key não configurada' },
+        { 
+          error: 'Google API key não configurada', 
+          debug: 'Verifique se GOOGLE_PLACES_API_KEY está definida no arquivo .env.local com uma chave válida da Google Places API' 
+        },
         { status: 500 }
       )
     }
 
     // Buscar detalhes do local incluindo reviews
     const currentPlaceId = GOOGLE_API_KEY ? await findVillaBeautyPlaceId(GOOGLE_API_KEY) : PLACE_ID
-    const response = await fetch(
-      `https://maps.googleapis.com/maps/api/place/details/json?place_id=${currentPlaceId}&fields=name,rating,reviews,user_ratings_total&language=pt&key=${GOOGLE_API_KEY}`,
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    )
+    console.log('Using Place ID:', currentPlaceId)
+    
+    const apiUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${currentPlaceId}&fields=name,rating,reviews,user_ratings_total&language=pt&key=${GOOGLE_API_KEY}`
+    console.log('API URL (without key):', apiUrl.replace(GOOGLE_API_KEY || '', 'HIDDEN_KEY'))
+    
+    const response = await fetch(apiUrl, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+
+    console.log('Response status:', response.status)
+    console.log('Response ok:', response.ok)
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
     }
 
     const data = await response.json()
+    console.log('API Response status:', data.status)
+    console.log('API Response data keys:', Object.keys(data))
 
     if (data.status !== 'OK') {
-      throw new Error(`Google Places API error: ${data.status}`)
+      console.log('Google Places API error details:', data)
+      
+      if (data.status === 'REQUEST_DENIED') {
+        // Retornar dados de fallback quando a API key for inválida
+        const fallbackData = {
+          reviews: [
+            {
+              name: 'Villa Beauty Clinic',
+              text: 'Excelente atendimento e resultados incríveis! Recomendo muito.',
+              rating: 5,
+              relative_time: 'Demo - Configure API'
+            },
+            {
+              name: 'Cliente Satisfeito',
+              text: 'Profissionais muito competentes e ambiente muito acolhedor.',
+              rating: 5,
+              relative_time: 'Demo - Configure API'
+            }
+          ],
+          place_info: {
+            name: 'Villa Beauty Clinic',
+            rating: 4.9,
+            total_ratings: 150
+          },
+          success: false,
+          fallback: true,
+          error: 'API key inválida - usando dados de demonstração'
+        }
+        
+        return NextResponse.json(fallbackData)
+      }
+      
+      throw new Error(`Google Places API error: ${data.status} - ${data.error_message || 'No error message'}`)
     }
 
     // Processar e formatar as reviews
@@ -100,7 +147,10 @@ export async function GET(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('Erro ao buscar avaliações do Google:', error)
+    console.error('=== Google Reviews API Error ===')
+    console.error('Error details:', error)
+    console.error('Error message:', error instanceof Error ? error.message : 'Unknown error')
+    console.error('API Key configured:', !!GOOGLE_API_KEY)
     
     // Fallback mínimo apenas se a API falhar completamente
     const fallbackData = {
@@ -118,9 +168,10 @@ export async function GET(request: NextRequest) {
         total_ratings: 0
       },
       success: false,
-      fallback: true
+      fallback: true,
+      error: error instanceof Error ? error.message : 'Unknown error'
     }
 
-    return NextResponse.json(fallbackData)
+    return NextResponse.json(fallbackData, { status: 500 })
   }
 }
