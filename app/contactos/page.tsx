@@ -2,6 +2,7 @@
 export const runtime = 'edge';
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 import { FaWhatsapp } from 'react-icons/fa'
 import { 
   MapPin, 
@@ -505,9 +506,11 @@ export default function Contact() {
               </Button>
             </div>
             <div>
-              <img 
+              <Image 
                 src="/hero-image.jpg" 
                 alt="Villa Beauty Clinic Exterior" 
+                width={600}
+                height={384}
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />
             </div>

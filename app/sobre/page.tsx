@@ -3,6 +3,7 @@ export const runtime = 'edge';
 import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   Heart,
   Award,
@@ -163,9 +164,11 @@ export default function About() {
               </Button>
             </div>
             <div className="relative">
-              <img
+              <Image
                 src="/hero-image.jpg"
                 alt="Villa Beauty Clinic"
+                width={600}
+                height={400}
                 className="rounded-2xl shadow-2xl"
               />
             </div>
@@ -263,9 +266,11 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {team.map((member, index) => (
               <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
+                  width={400}
+                  height={256}
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-6 bg-yellow-100">

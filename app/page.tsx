@@ -1,5 +1,6 @@
 export const runtime = 'edge';
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '../components/ui/button'
 import { Star, Award, Users, Clock, ArrowRight, CheckCircle } from 'lucide-react'
 
@@ -123,10 +124,13 @@ export default function Home() {
               </Button>
             </div>
             <div className="relative">
-              <img 
+              <Image 
                 src="/hero-image.jpg" 
                 alt="Villa Beauty Clinic Interior" 
+                width={600}
+                height={400}
                 className="rounded-2xl shadow-2xl"
+                priority
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
                 <div className="text-2xl font-bold text-yellow-700">15+</div>
@@ -150,9 +154,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <img 
+                <Image 
                   src={service.image} 
                   alt={service.title}
+                  width={400}
+                  height={192}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">

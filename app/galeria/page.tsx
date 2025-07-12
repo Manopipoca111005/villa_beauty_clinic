@@ -3,6 +3,7 @@ export const runtime = 'edge';
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import Image from 'next/image'
 import { 
   ArrowRight, 
   Star, 
@@ -166,9 +167,11 @@ interface GalleryItem {
                 onClick={() => openModal(item)}
               >
                 <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 md:group-hover:-translate-y-1">
-                  <img 
+                  <Image 
                     src={item.image} 
                     alt={item.title}
+                    width={400}
+                    height={256}
                     className="w-full h-64 object-cover md:group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 md:group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
@@ -239,9 +242,11 @@ interface GalleryItem {
               >
                 <X className="h-6 w-6 text-gray-600" />
               </button>
-              <img 
+              <Image 
                 src={selectedImage.image} 
                 alt={selectedImage.title}
+                width={800}
+                height={384}
                 className="w-full h-96 object-cover rounded-t-2xl"
               />
             </div>

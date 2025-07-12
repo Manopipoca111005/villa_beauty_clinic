@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Phone, MapPin } from 'lucide-react'
 
@@ -49,10 +50,13 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
-              <img 
+              <Image 
                 src="/logo.png" 
                 alt="Villa Beauty Clinic Logo" 
-                className="w-12 h-12 object-contain" 
+                width={48}
+                height={48}
+                className="object-contain"
+                priority
               />
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">Villa Beauty</h1>

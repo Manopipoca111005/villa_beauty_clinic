@@ -4,6 +4,7 @@ import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import Image from 'next/image'
 import { 
   Sparkles, 
   Zap, 
@@ -148,9 +149,11 @@ function getCategoriaFromQuery(searchParams: ReturnType<typeof useSearchParams>)
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services[activeCategory]?.map((service, index) => (
               <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <img 
+                <Image 
                   src={service.image} 
                   alt={service.name}
+                  width={400}
+                  height={192}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6 flex flex-col">
