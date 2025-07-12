@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+export const runtime = 'edge';
 
 const GOOGLE_API_KEY = process.env.GOOGLE_PLACES_API_KEY
 // Place ID correto da Villa Beauty Clinic encontrado via coordenadas
