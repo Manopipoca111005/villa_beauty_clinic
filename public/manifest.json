@@ -1,0 +1,62 @@
+{
+  "name": "Villa Beauty Clinic - Clínica de Estética Santa Maria da Feira",
+  "short_name": "Villa Beauty",
+  "description": "Clínica de estética e beleza em Santa Maria da Feira. Tratamentos faciais, laser estético, depilação e rejuvenescimento.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbbf24",
+  "theme_color": "#fbbf24",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "pt-PT",
+  "categories": ["health", "beauty", "medical"],
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/hero-image.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Villa Beauty Clinic - Página Principal"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Marcar Consulta",
+      "short_name": "Consultas",
+      "description": "Marcar uma consulta na Villa Beauty Clinic",
+      "url": "/servicos",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Contactos",
+      "short_name": "Contactos",
+      "description": "Informações de contacto da clínica",
+      "url": "/contactos",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+} 
