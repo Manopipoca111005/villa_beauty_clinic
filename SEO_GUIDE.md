@@ -44,7 +44,7 @@ YOUR_PIXEL_ID = "XXXXXXXXXX"
 ### 2. Google Search Console
 1. Aceder a https://search.google.com/search-console
 2. Adicionar propriedade: `https://villabeautyclinic.pages.dev`
-3. Verificar propriedade usando o arquivo `google1234567890.html`
+3. Verificar propriedade usando o arquivo `googled3ef8ade1f291291.html`
 4. Submeter sitemap: `https://villabeautyclinic.pages.dev/sitemap.xml`
 
 ### 3. Google My Business
