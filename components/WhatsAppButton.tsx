@@ -8,7 +8,7 @@ const WhatsAppButton = () => {
   const message = "Olá! Gostaria de saber mais sobre os vossos serviços."; // Mensagem pré-definida
 
   const openWhatsApp = () => {
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/916248032?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (

@@ -168,7 +168,7 @@ function getCategoriaFromQuery(searchParams: ReturnType<typeof useSearchParams>)
                     href="https://buk.pt/villa-beauty"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300"
+                    className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-8 py-4 text-lg rounded-full transition-all duration-300"
                     style={{ minWidth: '120px' }}
                   >
                     Marcar Consulta
@@ -253,7 +253,7 @@ function getCategoriaFromQuery(searchParams: ReturnType<typeof useSearchParams>)
               target="_blank"
               rel="noopener noreferrer"
               tabIndex={0}
-              className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300"
+              className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-3xl shadow-mobile-enhanced hover:shadow-mobile-enhanced transition-all duration-300"
               style={{ minWidth: '200px' }}
             >
               Marcar Consulta

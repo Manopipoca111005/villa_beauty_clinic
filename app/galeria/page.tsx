@@ -119,6 +119,18 @@ interface GalleryItem {
     setSelectedImage(null)
   }
 
+  // Mapear categorias da galeria para categorias dos serviços
+  const getCategoryServiceUrl = (category: string) => {
+    const categoryMap: { [key: string]: string } = {
+      'facial': '/servicos?categoria=facial',
+      'laser': '/servicos?categoria=laser', 
+      'corporal': '/servicos?categoria=corporal',
+      'instalacoes': '/servicos', // Instalações vai para serviços geral
+      'all': '/servicos'
+    }
+    return categoryMap[category] || '/servicos'
+  }
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -221,9 +233,9 @@ interface GalleryItem {
               asChild
               variant="default"
               size="lg"
-              className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300"
+              className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-3xl shadow-mobile-enhanced hover:shadow-mobile-enhanced transition-all duration-300"
             >
-              <Link href="/contactos">
+              <Link href="/servicos">
                 Marcar Consulta
               </Link>
             </Button>
@@ -265,16 +277,14 @@ interface GalleryItem {
                     <span>Duração: {selectedImage.duration}</span>
                   </div>
                 )}
-              </div>
-              <Button 
+              </div>              <Button
                 asChild
                 variant="default"
                 size="default"
-                className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300"
+                className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-3xl shadow-mobile-enhanced hover:shadow-mobile-enhanced transition-all duration-300"
               >
-                <Link href="/contactos">
-                  Marcar Consulta para Este Tratamento
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                <Link href={"https://buk.pt/villa-beauty"} target="_blank" rel="noopener noreferrer">
+                  Marcar Consulta
                 </Link>
               </Button>
             </div>

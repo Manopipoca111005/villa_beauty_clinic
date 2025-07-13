@@ -28,14 +28,22 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-2 text-sm">
             <div className="flex items-center space-x-4 text-yellow-700">
-              <div className="flex items-center space-x-1">
+              <a 
+                href="tel:+351912248032" 
+                className="flex items-center space-x-1 hover:text-yellow-800 transition-colors cursor-pointer"
+              >
                 <Phone className="h-4 w-4" />
                 <span>+351 912 248 032</span>
-              </div>
-              <div className="flex items-center space-x-1">
+              </a>
+              <a 
+                href="https://www.google.com/maps/dir//Villa+Beauty+Clinic,+R.+Ferreira+Castro,+4520-227+Santa+Maria+da+Feira/@40.9240729,-8.5610258,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0xd2381c603fc33e9:0x9dc06e90471a55d6!2m2!1d-8.5584509!2d40.9240689"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-1 hover:text-yellow-800 transition-colors cursor-pointer"
+              >
                 <MapPin className="h-4 w-4" />
                 <span> R. Ferreira Castro, 4520-227 Santa Maria da Feira</span>
-              </div>
+              </a>
             </div>
             <div className="hidden md:block text-yellow-700">
               Ter-Sex: 11h-20h | Sáb: 9h-14h
@@ -45,7 +53,7 @@ const Navbar = () => {
       </div>
 
       {/* Main Navigation */}
-      <nav className="bg-white shadow-lg sticky top-0 z-50">
+      <nav className="bg-white shadow-lg fixed top-0 left-0 right-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
@@ -84,7 +92,7 @@ const Navbar = () => {
             <div className="hidden md:block">
               <Link 
                 href="/servicos"
-                className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-6 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl inline-block"
+                className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-6 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl shadow-mobile-enhanced hover:shadow-mobile-enhanced inline-block"
               >
                 Marcar Consulta
               </Link>
@@ -123,7 +131,7 @@ const Navbar = () => {
                 <Link 
                   href="/servicos" 
                   onClick={() => setIsOpen(false)}
-                  className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-6 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl inline-block"
+                  className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-6 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl shadow-mobile-enhanced hover:shadow-mobile-enhanced inline-block"
                 >
                   Marcar Consulta
                 </Link>

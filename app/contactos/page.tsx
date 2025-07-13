@@ -452,7 +452,7 @@ export default function Contact() {
               size="lg"
               className="bg-white text-yellow-700 hover:bg-yellow-50 px-8 py-4 text-lg rounded-full shadow-lg"
             >
-              <a href="https://wa.me/351123456789" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/351916248032" target="_blank" rel="noopener noreferrer">
                 <FaWhatsapp className="mr-2 h-5 w-5" />
                 WhatsApp
               </a>

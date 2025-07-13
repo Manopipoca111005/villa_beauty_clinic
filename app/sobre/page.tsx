@@ -1,5 +1,15 @@
 'use client'
+
 export const runtime = 'edge';
+
+interface Review {
+  name: string
+  text: string
+  rating: number
+  relative_time?: string
+  profile_photo?: string
+}
+
 import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
@@ -16,14 +26,6 @@ import {
   Clock,
   Sparkles
 } from 'lucide-react'
-
-interface Review {
-  name: string
-  text: string
-  rating: number
-  relative_time?: string
-  profile_photo?: string
-}
 
 interface PlaceInfo {
   name: string
@@ -156,9 +158,9 @@ export default function About() {
                 asChild
                 variant="default"
                 size="lg"
-                className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300"
+                className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-3xl shadow-mobile-enhanced hover:shadow-mobile-enhanced transition-all duration-300"
               >
-                <Link href="/contactos">
+                <Link href="/servicos">
                   Marcar Consulta
                 </Link>
               </Button>
@@ -452,11 +454,15 @@ export default function About() {
               asChild
               variant="default"
               size="lg"
-              className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300"
+              className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-3xl shadow-mobile-enhanced hover:shadow-mobile-enhanced transition-all duration-300"
             >
-              <Link href="/contactos">
+              <a 
+                href="https://www.google.com/maps/place/Villa+Beauty+Clinic/@40.9240729,-8.5610258,17z/data=!3m2!4b1!5s0xd2380d86072078d:0xdbe85ba3dd3b2993!4m6!3m5!1s0xd2381c603fc33e9:0x9dc06e90471a55d6!8m2!3d40.9240689!4d-8.5584509!16s%2Fg%2F11x8dcvfnq?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
                 Localização
-              </Link>
+              </a>
             </Button>
           </div>
         </div>
