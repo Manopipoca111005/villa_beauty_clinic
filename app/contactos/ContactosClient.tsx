@@ -401,7 +401,7 @@ function ContactContent() {
                       <Facebook className="h-6 w-6 text-white" />
                     </a>
                     <a
-                      href="https://www.instagram.com/villabeautyclinic"
+                      href="https://www.instagram.com/villa.beauty.clinic/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center hover:from-purple-600 hover:to-pink-600 transition-colors"
