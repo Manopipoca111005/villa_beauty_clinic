@@ -6,7 +6,7 @@ import { Star, Award, Users, Clock, ArrowRight, CheckCircle } from 'lucide-react
 
 export const metadata: Metadata = {
   title: 'Villa Beauty Clinic - Clínica de Estética em Santa Maria da Feira',
-  description: 'Clínica de estética e beleza em Santa Maria da Feira. Tratamentos faciais, laser estético, depilação e rejuvenescimento. 15+ anos de experiência. Marque sua consulta hoje!',
+  description: 'Clínica de estética e beleza em Santa Maria da Feira. Tratamentos faciais, laser estético, depilação, rejuvenescimento e tratamento de estrias (StriaPro). 15+ anos de experiência. Marque sua consulta hoje!',
   keywords: [
     'clínica estética Santa Maria da Feira',
     'tratamentos faciais',
@@ -20,11 +20,17 @@ export const metadata: Metadata = {
     'modelagem corporal',
     'drenagem linfática',
     'peeling químico',
-    'microagulhamento'
+    'microagulhamento',
+    'tratamento de estrias',
+    'StriaPro',
+    'estrias Santa Maria da Feira',
+    'estrias método rápido',
+    'estrias confortável',
+    'estrias resultados rápidos'
   ],
   openGraph: {
     title: 'Villa Beauty Clinic - Clínica de Estética em Santa Maria da Feira',
-    description: 'Clínica de estética e beleza em Santa Maria da Feira. Tratamentos faciais, laser estético, depilação e rejuvenescimento. 15+ anos de experiência.',
+    description: 'Clínica de estética e beleza em Santa Maria da Feira. Tratamentos faciais, laser estético, depilação, rejuvenescimento e tratamento de estrias (StriaPro). 15+ anos de experiência.',
     url: 'https://villabeautyclinic.pages.dev',
     images: [
       {
@@ -78,6 +84,13 @@ export default function Home() {
       image: '/hero-image.jpg',
       features: ['Peeling Químico', 'Microagulhamento', 'Tratamentos Avançados'],
       slug: 'tratamentos-especiais'
+    },
+    {
+      title: 'Tratamento de Estrias (StriaPro)',
+      description: 'Livre-se das estrias de forma rápida e confortável com o método StriaPro! Resultados visíveis em apenas 15 dias. Técnica personalizada para cada tipo de estria, adaptada à largura e profundidade, garantindo máxima eficácia e conforto.',
+      image: '/hero-image.jpg',
+      features: ['Recuperação em 15 dias', 'Conforto máximo', 'Personalização para cada paciente'],
+      slug: 'tratamento-estrias-striapro'
     }
   ]
 
@@ -91,7 +104,7 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "Villa Beauty Clinic - Clínica de Estética em Santa Maria da Feira",
-            "description": "Clínica de estética e beleza em Santa Maria da Feira. Tratamentos faciais, laser estético, depilação e rejuvenescimento.",
+            "description": "Clínica de estética e beleza em Santa Maria da Feira. Tratamentos faciais, laser estético, depilação, rejuvenescimento e tratamento de estrias (StriaPro).",
             "url": "https://villabeautyclinic.pt",
             "mainEntity": {
               "@type": "BeautySalon",
@@ -145,6 +158,14 @@ export default function Home() {
                       "@type": "Service",
                       "name": "Tratamentos Corporais",
                       "description": "Cuidados completos para o corpo"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Tratamento de Estrias (StriaPro)",
+                      "description": "Livre-se das estrias de forma rápida e confortável com o método StriaPro! O tratamento de estrias mais rápido e confortável do mercado, com resultados visíveis em apenas 15 dias. Técnica personalizada para cada tipo de estria, adaptada à largura e profundidade, garantindo máxima eficácia e conforto. Compatível com todos os fototipos de pele e até durante a amamentação."
                     }
                   }
                 ]
@@ -298,6 +319,7 @@ export default function Home() {
                         service.title === 'Laser Estético' ? 'laser' :
                         service.title === 'Tratamentos Corporais' ? 'corporal' :
                         service.title === 'Tratamentos Especiais' ? 'especial' :
+                        service.title === 'Tratamento de Estrias (StriaPro)' ? 'especial' :
                         'facial'
                       }`}>Ver Detalhes</Link>
                     </Button>

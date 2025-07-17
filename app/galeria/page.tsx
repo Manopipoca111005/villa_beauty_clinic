@@ -4,14 +4,21 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
-import { 
-  ArrowRight, 
-  Star, 
+import {
+  ArrowRight,
+  Star,
   Calendar,
   Eye,
   Filter,
   X
 } from 'lucide-react'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext
+} from '@/components/ui/carousel'
 
 export default function Gallery() {
 // Type for gallery items
@@ -34,8 +41,20 @@ interface GalleryItem {
     { id: 'facial', name: 'Tratamentos Faciais' },
     { id: 'laser', name: 'Laser Estético' },
     { id: 'corporal', name: 'Tratamentos Corporais' },
-    { id: 'instalacoes', name: 'Instalações' }
+    { id: 'especiais', name: 'Tratamentos Especiais' },
+    { id: 'instalacoes', name: 'Instalações' },
   ]
+
+  // Lista de imagens de estrias
+  const estriasImages = [
+    '/imagens/WhatsApp Image 2025-07-15 at 01.00.39.jpeg',
+    '/imagens/WhatsApp Image 2025-07-15 at 01.00.39 (1).jpeg',
+    '/imagens/WhatsApp Image 2025-07-15 at 01.00.39 (2).jpeg',
+    '/imagens/WhatsApp Image 2025-07-15 at 01.00.40.jpeg',
+    '/imagens/WhatsApp Image 2025-07-15 at 01.00.40 (1).jpeg',
+    '/imagens/WhatsApp Image 2025-07-15 at 01.00.40 (2).jpeg',
+    '/imagens/WhatsApp Image 2025-07-15 at 01.00.40 (3).jpeg'
+  ];
 
   const galleryItems: GalleryItem[] = [
     {
@@ -94,6 +113,16 @@ interface GalleryItem {
       description: 'Ambiente moderno e confortável',
       image: '/hero-image.jpg',
       rating: 5
+    },
+    {
+      id: 'estrias',
+      category: 'corporal',
+      type: 'before-after',
+      title: 'Tratamento de Estrias',
+      description: 'Redução de estrias após tratamento completo',
+      image: estriasImages[0],
+      duration: '6 meses',
+      rating: 5
     }
   ]
 
@@ -107,9 +136,21 @@ interface GalleryItem {
     }
   ]
 
-  const filteredItems = selectedCategory === 'all' 
-    ? galleryItems 
-    : galleryItems.filter(item => item.category === selectedCategory)
+  const especiaisIds = [
+    'Peeling Químico',
+    'Microagulhamento',
+    'Tratamento Avançado',
+    'Tratamento de Estrias (StriaPro)'
+  ];
+
+  const filteredItems = selectedCategory === 'all'
+    ? galleryItems
+    : selectedCategory === 'especiais'
+      ? [
+          ...galleryItems.filter(item => especiaisIds.includes(item.title) && item.title !== 'Tratamento de Estrias'),
+          galleryItems.find(item => item.id === 'estrias')
+        ].filter((item): item is GalleryItem => Boolean(item))
+      : galleryItems.filter(item => item.category === selectedCategory)
 
   const openModal = (item: GalleryItem) => {
     setSelectedImage(item)
@@ -123,8 +164,9 @@ interface GalleryItem {
   const getCategoryServiceUrl = (category: string) => {
     const categoryMap: { [key: string]: string } = {
       'facial': '/servicos?categoria=facial',
-      'laser': '/servicos?categoria=laser', 
+      'laser': '/servicos?categoria=laser',
       'corporal': '/servicos?categoria=corporal',
+      'especiais': '/servicos?categoria=especiais',
       'instalacoes': '/servicos', // Instalações vai para serviços geral
       'all': '/servicos'
     }
@@ -140,7 +182,7 @@ interface GalleryItem {
             Galeria de Resultados
           </h1>
           <p className="text-xl text-yellow-100 max-w-3xl mx-auto">
-            Veja os resultados reais dos nossos tratamentos e inspire-se 
+            Veja os resultados reais dos nossos tratamentos e inspire-se
             com as transformações dos nossos clientes.
           </p>
         </div>
@@ -173,14 +215,14 @@ interface GalleryItem {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map((item) => (
-              <div 
-                key={item.id} 
+              <div
+                key={item.id}
                 className="group cursor-pointer"
                 onClick={() => openModal(item)}
               >
                 <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 md:group-hover:-translate-y-1">
-                  <Image 
-                    src={item.image} 
+                  <Image
+                    src={item.image}
                     alt={item.title}
                     width={400}
                     height={256}
@@ -217,7 +259,7 @@ interface GalleryItem {
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-yellow-400 to-yellow-700">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
@@ -225,11 +267,11 @@ interface GalleryItem {
             Pronta para a Sua Transformação?
           </h2>
           <p className="text-xl text-yellow-100 mb-8">
-            Junte-se às centenas de clientes satisfeitas e descubra 
+            Junte-se às centenas de clientes satisfeitas e descubra
             o que podemos fazer por si.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
+            <Button
               asChild
               variant="default"
               size="lg"
@@ -245,49 +287,28 @@ interface GalleryItem {
 
       {/* Modal */}
       {selectedImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="relative">
-              <button
-                onClick={closeModal}
-                className="absolute top-4 right-4 z-10 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition-colors"
-              >
-                <X className="h-6 w-6 text-gray-600" />
-              </button>
-              <Image 
-                src={selectedImage.image} 
-                alt={selectedImage.title}
-                width={800}
-                height={384}
-                className="w-full h-96 object-cover rounded-t-2xl"
-              />
-            </div>
-            <div className="p-8">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">{selectedImage.title}</h3>
-              <p className="text-lg text-gray-600 mb-6">{selectedImage.description}</p>
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center space-x-1">
-                  {[...Array(selectedImage.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
+          <div className="bg-white rounded-lg shadow-lg max-w-2xl w-full p-6 relative">
+            <button onClick={closeModal} className="absolute top-2 right-2 text-gray-500 hover:text-gray-800">
+              <X size={24} />
+            </button>
+            <h2 className="text-2xl font-bold mb-2">{selectedImage.title}</h2>
+            <p className="mb-4 text-gray-600">{selectedImage.description}</p>
+            {selectedImage.id === 'estrias' ? (
+              <Carousel className="w-full">
+                <CarouselContent>
+                  {estriasImages.map((img, idx) => (
+                    <CarouselItem key={idx}>
+                      <Image src={img} alt={`Tratamento de Estrias ${idx+1}`} width={400} height={256} className="w-full h-64 object-contain rounded-2xl bg-black" />
+                    </CarouselItem>
                   ))}
-                </div>
-                {selectedImage.duration && (
-                  <div className="flex items-center space-x-2 text-gray-500">
-                    <Calendar className="h-5 w-5" />
-                    <span>Duração: {selectedImage.duration}</span>
-                  </div>
-                )}
-              </div>              <Button
-                asChild
-                variant="default"
-                size="default"
-                className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-3xl shadow-mobile-enhanced hover:shadow-mobile-enhanced transition-all duration-300"
-              >
-                <Link href={"https://buk.pt/villa-beauty"} target="_blank" rel="noopener noreferrer">
-                  Marcar Consulta
-                </Link>
-              </Button>
-            </div>
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            ) : (
+              <Image src={selectedImage.image} alt={selectedImage.title} width={400} height={256} className="w-full h-64 object-contain rounded-2xl bg-black" />
+            )}
           </div>
         </div>
       )}

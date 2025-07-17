@@ -137,6 +137,12 @@ export default function ServicosClient() {
         description: 'Protocolos personalizados para necessidades específicas.',
         price: '80 €',
         image: '/hero-image.jpg'
+      },
+      {
+        name: 'Tratamento de Estrias (StriaPro)',
+        description: 'Livre-se das estrias de forma rápida e confortável com o método StriaPro! O tratamento de estrias mais rápido e confortável do mercado, com resultados visíveis em apenas 15 dias. Técnica personalizada para cada tipo de estria, adaptada à largura e profundidade, garantindo máxima eficácia e conforto. Compatível com todos os fototipos de pele e até durante a amamentação.',
+        price: 'Sob consulta',
+        image: '/imagens/WhatsApp Image 2025-07-15 at 01.00.39.jpeg'
       }
     ]
   };
@@ -207,6 +213,20 @@ export default function ServicosClient() {
                     }
                   },
                   "price": "50",
+                  "priceCurrency": "EUR"
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Tratamento de Estrias (StriaPro)",
+                    "description": "Livre-se das estrias de forma rápida e confortável com o método StriaPro! O tratamento de estrias mais rápido e confortável do mercado, com resultados visíveis em apenas 15 dias. Técnica personalizada para cada tipo de estria, adaptada à largura e profundidade, garantindo máxima eficácia e conforto. Compatível com todos os fototipos de pele e até durante a amamentação.",
+                    "provider": {
+                      "@type": "BeautySalon",
+                      "name": "Villa Beauty Clinic"
+                    }
+                  },
+                  "price": "Sob consulta",
                   "priceCurrency": "EUR"
                 }
               ]
