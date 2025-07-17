@@ -47,13 +47,13 @@ interface GalleryItem {
 
   // Lista de imagens de estrias
   const estriasImages = [
-    '/imagens/WhatsApp Image 2025-07-15 at 01.00.39.jpeg',
-    '/imagens/WhatsApp Image 2025-07-15 at 01.00.39 (1).jpeg',
-    '/imagens/WhatsApp Image 2025-07-15 at 01.00.39 (2).jpeg',
-    '/imagens/WhatsApp Image 2025-07-15 at 01.00.40.jpeg',
-    '/imagens/WhatsApp Image 2025-07-15 at 01.00.40 (1).jpeg',
-    '/imagens/WhatsApp Image 2025-07-15 at 01.00.40 (2).jpeg',
-    '/imagens/WhatsApp Image 2025-07-15 at 01.00.40 (3).jpeg'
+    '/imagens/WhatsApp-Image-2025-07-15-at-01.00.39.jpeg',
+    '/imagens/WhatsApp-Image-2025-07-15-at-01.00.39-(1).jpeg',
+    '/imagens/WhatsApp-Image-2025-07-15-at-01.00.39-(2).jpeg',
+    '/imagens/WhatsApp-Image-2025-07-15-at-01.00.40.jpeg',
+    '/imagens/WhatsApp-Image-2025-07-15-at-01.00.40-(1).jpeg',
+    '/imagens/WhatsApp-Image-2025-07-15-at-01.00.40-(2).jpeg',
+    '/imagens/WhatsApp-Image-2025-07-15-at-01.00.40-(3).jpeg'
   ];
 
   const galleryItems: GalleryItem[] = [
