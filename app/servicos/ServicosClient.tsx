@@ -276,7 +276,7 @@ export default function ServicosClient() {
                 <article key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <Image 
                     src={service.image} 
-                    alt={`${service.name} - Villa Beauty Clinic Santa Maria da Feira`}
+                    alt={`${service.name} em Santa Maria da Feira - Clínica de Estética, Depilação a Laser, Estrias, Limpeza de Pele`} 
                     width={400}
                     height={192}
                     className="w-full h-48 object-cover"

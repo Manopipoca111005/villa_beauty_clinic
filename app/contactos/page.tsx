@@ -34,5 +34,15 @@ export const metadata: Metadata = {
 export const runtime = 'edge';
 
 export default function Contactos() {
-  return <ContactosClient />
+  return (
+    <>
+      {/* Adicionar banner SEO no início da página */}
+      <section className="py-4 bg-yellow-50 text-center">
+        <p className="text-lg text-yellow-700 font-semibold">
+          Entre em contacto com a clínica de estética referência em Santa Maria da Feira. Marque consulta para tratamentos faciais, corporais, depilação a laser e estrias.
+        </p>
+      </section>
+      <ContactosClient />
+    </>
+  )
 }

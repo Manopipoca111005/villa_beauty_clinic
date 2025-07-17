@@ -5,28 +5,32 @@ import { Button } from '../components/ui/button'
 import { Star, Award, Users, Clock, ArrowRight, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Villa Beauty Clinic - Clínica de Estética em Santa Maria da Feira',
-  description: 'Clínica de estética e beleza em Santa Maria da Feira. Tratamentos faciais, laser estético, depilação, rejuvenescimento e tratamento de estrias (StriaPro). 15+ anos de experiência. Marque sua consulta hoje!',
+  title: 'Clínica de Estética em Santa Maria da Feira | Tratamentos Faciais, Corporais e Laser',
+  description: 'Clínica de estética em Santa Maria da Feira com tratamentos faciais, corporais, depilação a laser, estrias, rejuvenescimento, redução de medidas, drenagem linfática, microagulhamento, peeling químico e mais. Resultados rápidos e conforto máximo. Marque já a sua avaliação!',
   keywords: [
     'clínica estética Santa Maria da Feira',
+    'estética em Santa Maria da Feira',
+    'tratamento de estrias Santa Maria da Feira',
+    'depilação a laser Santa Maria da Feira',
+    'limpeza de pele Santa Maria da Feira',
+    'microagulhamento Santa Maria da Feira',
+    'peeling químico Santa Maria da Feira',
+    'redução de medidas Santa Maria da Feira',
+    'drenagem linfática Santa Maria da Feira',
     'tratamentos faciais',
-    'depilação laser',
-    'rejuvenescimento facial',
-    'estética e beleza',
     'tratamentos corporais',
-    'limpeza facial',
-    'hidratação',
-    'anti-idade',
+    'rejuvenescimento facial',
     'modelagem corporal',
-    'drenagem linfática',
-    'peeling químico',
-    'microagulhamento',
-    'tratamento de estrias',
+    'clínica de beleza',
+    'Santa Maria da Feira',
     'StriaPro',
-    'estrias Santa Maria da Feira',
     'estrias método rápido',
     'estrias confortável',
-    'estrias resultados rápidos'
+    'estrias resultados rápidos',
+    'profissionais certificados',
+    'tecnologia de ponta',
+    'resultados reais',
+    'beleza e bem-estar'
   ],
   openGraph: {
     title: 'Villa Beauty Clinic - Clínica de Estética em Santa Maria da Feira',
@@ -186,8 +190,8 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto">
-              Descubra tratamentos de estética avançados com tecnologia de ponta 
-              e profissionais especializados na Villa Beauty Clinic em Santa Maria da Feira.
+              Descubra tratamentos de estética avançados com tecnologia de ponta e profissionais especializados na Villa Beauty Clinic em Santa Maria da Feira.<br/>
+              Livre-se das estrias de forma rápida e confortável em Santa Maria da Feira com o StriaPro. Resultados em apenas 15 dias!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -282,8 +286,8 @@ export default function Home() {
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Nossos Tratamentos</h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Oferecemos uma ampla gama de tratamentos estéticos com tecnologia avançada 
-                e cuidado personalizado em Santa Maria da Feira.
+                Oferecemos uma ampla gama de tratamentos estéticos com tecnologia avançada e cuidado personalizado em Santa Maria da Feira.<br/>
+                Resultados reais em tratamentos faciais, corporais, depilação a laser e estrias em Santa Maria da Feira.
               </p>
             </div>
             
@@ -292,7 +296,7 @@ export default function Home() {
                 <article key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                   <Image 
                     src={service.image} 
-                    alt={`${service.title} - Villa Beauty Clinic Santa Maria da Feira`}
+                    alt={`${service.title} em Santa Maria da Feira - Clínica de Estética, Depilação a Laser, Estrias, Limpeza de Pele`} 
                     width={400}
                     height={192}
                     className="w-full h-48 object-cover"
