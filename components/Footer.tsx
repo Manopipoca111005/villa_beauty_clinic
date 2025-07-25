@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Logo e Descrição */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center mx-auto">
+          {/* Logo, Descrição, Horários e Redes Sociais */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <Image 
@@ -27,6 +27,34 @@ const Footer = () => {
               Oferecemos tratamentos de qualidade com tecnologia avançada
               e profissionais especializados.
             </p>
+            {/* Horários */}
+            <div className="mt-8">
+              <h4 className="text-lg font-semibold mb-4 text-yellow-700">Horários</h4>
+              <div className="space-y-2 mb-6">
+                <div className="flex items-center space-x-2 text-sm">
+                  <Clock className="h-4 w-4 text-yellow-700" />
+                  <span className="text-gray-300">Ter-Sex: 11h-20h</span>
+                </div>
+                <div className="flex items-center space-x-2 text-sm">
+                  <Clock className="h-4 w-4 text-yellow-700" />
+                  <span className="text-gray-300">Sábado: 9h-14h</span>
+                </div>
+                <div className="flex items-center space-x-2 text-sm">
+                  <Clock className="h-4 w-4 text-yellow-700" />
+                  <span className="text-gray-300">Dom-Seg: Fechado</span>
+                </div>
+              </div>
+              {/* Redes Sociais */}
+              <div className="flex items-center space-x-2 mt-2">
+                <span className="text-sm font-semibold text-yellow-700">Siga-nos</span>
+                <a
+                  href="https://www.instagram.com/villa.beauty.clinic/" target="_blank" rel="noopener noreferrer"
+                  className="w-8 h-8 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 rounded-full flex items-center justify-center hover:opacity-90 transition-colors"
+                >
+                  <Instagram className="h-4 w-4 text-white" />
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* Links Rápidos */}
@@ -65,59 +93,30 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-yellow-700">Contactos</h4>
             <ul className="space-y-3">
-              <li className="flex items-center space-x-2 text-sm">
+              <a
+                href="tel:+351912248032"
+                className="flex items-center space-x-2 text-sm hover:text-yellow-800 transition-colors cursor-pointer"
+              >
                 <Phone className="h-4 w-4 text-yellow-700" />
-                <span className="text-gray-300">+351 912 248 032</span>
-              </li>
+                <span className="text-gray-300">+351 916 248 032</span>
+              </a>
               <li className="flex items-center space-x-2 text-sm">
                 <Mail className="h-4 w-4 text-yellow-700" />
-                <span className="text-gray-300">info@villabeauty.pt</span>
+                <a href="mailto:villabeauty@outlook.pt" className="text-gray-300 hover:text-yellow-700 transition-colors">villabeauty@outlook.pt</a>
               </li>
-              <li className="flex items-start space-x-2 text-sm">
+              <a
+                href="https://www.google.com/maps/dir//Villa+Beauty+Clinic,+R.+Ferreira+Castro,+4520-227+Santa+Maria+da+Feira/@40.9240729,-8.5610258,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0xd2381c603fc33e9:0x9dc06e90471a55d6!2m2!1d-8.5584509!2d40.9240689"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start space-x-2 text-sm hover:text-yellow-800 transition-colors cursor-pointer"
+              >
                 <MapPin className="h-4 w-4 text-yellow-700 mt-0.5" />
                 <span className="text-gray-300">
                    R. Ferreira Castro<br />
                    4520-227 Santa Maria da Feira
                 </span>
-              </li>
+              </a>
             </ul>
-          </div>
-
-          {/* Horários e Redes Sociais */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-yellow-700">Horários</h4>
-            <div className="space-y-2 mb-6">
-              <div className="flex items-center space-x-2 text-sm">
-                <Clock className="h-4 w-4 text-yellow-700" />
-                <span className="text-gray-300">Ter-Sex: 11h-20h</span>
-              </div>
-              <div className="flex items-center space-x-2 text-sm">
-                <Clock className="h-4 w-4 text-yellow-700" />
-                <span className="text-gray-300">Sábado: 9h-14h</span>
-              </div>
-              <div className="flex items-center space-x-2 text-sm">
-                <Clock className="h-4 w-4 text-yellow-700" />
-                <span className="text-gray-300">Dom-Seg: Fechado</span>
-              </div>
-            </div>
-
-            <div>
-              <h5 className="text-sm font-semibold mb-3 text-yellow-700">Siga-nos</h5>
-              <div className="flex space-x-3">
-                <a
-                  href="https://www.instagram.com/villa.beauty.clinic/" target="_blank" rel="noopener noreferrer"
-                  className="w-8 h-8 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 rounded-full flex items-center justify-center hover:opacity-90 transition-colors"
-                >
-                  <Instagram className="h-4 w-4 text-white" />
-                </a>
-                <a
-                  href="#"
-                  className="w-8 h-8 bg-[#1877F3] rounded-full flex items-center justify-center hover:bg-[#145db2] transition-colors"
-                >
-                  <Facebook className="h-4 w-4 text-white" />
-                </a>
-              </div>
-            </div>
           </div>
         </div>
 

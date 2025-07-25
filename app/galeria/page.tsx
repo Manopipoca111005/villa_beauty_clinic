@@ -33,94 +33,29 @@ interface GalleryItem {
   type: string;
 }
 
-  const [selectedCategory, setSelectedCategory] = useState('all')
+  const [selectedCategory, setSelectedCategory] = useState('laser')
   const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null)
 
   const categories = [
-    { id: 'all', name: 'Todos' },
-    { id: 'facial', name: 'Tratamentos Faciais' },
-    { id: 'laser', name: 'Laser Estético' },
-    { id: 'corporal', name: 'Tratamentos Corporais' },
-    { id: 'especiais', name: 'Tratamentos Especiais' },
-    { id: 'instalacoes', name: 'Instalações' },
+    { id: 'laser', name: 'Laser SHR' }
   ]
 
   // Lista de imagens de estrias
   const estriasImages = [
-    '/imagens/WhatsApp-Image-2025-07-15-at-01.00.39.jpeg',
-    '/imagens/WhatsApp-Image-2025-07-15-at-01.00.39-(1).jpeg',
-    '/imagens/WhatsApp-Image-2025-07-15-at-01.00.39-(2).jpeg',
-    '/imagens/WhatsApp-Image-2025-07-15-at-01.00.40.jpeg',
-    '/imagens/WhatsApp-Image-2025-07-15-at-01.00.40-(1).jpeg',
-    '/imagens/WhatsApp-Image-2025-07-15-at-01.00.40-(2).jpeg',
-    '/imagens/WhatsApp-Image-2025-07-15-at-01.00.40-(3).jpeg'
+    { src: '/imagens/estrias_antes.jpeg', legenda: 'Antes' },
+    { src: '/imagens/estrias_depois.jpeg', legenda: 'Depois com 1 sessão' },
+    { src: '/imagens/estrias_antes2.jpeg', legenda: 'Antes' },
+    { src: '/imagens/estrias_depois2.jpeg', legenda: 'Depois com 1 sessão' }
   ];
 
   const galleryItems: GalleryItem[] = [
     {
-      id: 1,
-      category: 'facial',
-      type: 'before-after',
-      title: 'Tratamento de Acne',
-      description: 'Resultados após 3 sessões de limpeza profunda e peeling',
-      image: '/before-after-1.jpg',
-      duration: '3 meses',
-      rating: 5
-    },
-    {
-      id: 2,
-      category: 'laser',
-      type: 'before-after',
-      title: 'Depilação Laser',
-      description: 'Resultado após 6 sessões de depilação laser',
-      image: '/before-after-2.jpg',
-      duration: '6 meses',
-      rating: 5
-    },
-    {
-      id: 3,
-      category: 'corporal',
-      type: 'before-after',
-      title: 'Modelagem Corporal',
-      description: 'Redução de celulite após tratamento completo',
-      image: '/before-after-3.jpg',
-      duration: '4 meses',
-      rating: 5
-    },
-    {
-      id: 4,
-      category: 'facial',
-      type: 'treatment',
-      title: 'Tratamento Facial em Curso',
-      description: 'Aplicação de máscara hidratante',
-      image: '/facial-treatment.jpg',
-      rating: 5
-    },
-    {
-      id: 5,
-      category: 'laser',
-      type: 'equipment',
-      title: 'Equipamento Laser',
-      description: 'Tecnologia de ponta para tratamentos seguros',
-      image: '/laser-treatment.jpg',
-      rating: 5
-    },
-    {
-      id: 6,
-      category: 'instalacoes',
-      type: 'facility',
-      title: 'Sala de Tratamento',
-      description: 'Ambiente moderno e confortável',
-      image: '/hero-image.jpg',
-      rating: 5
-    },
-    {
       id: 'estrias',
-      category: 'corporal',
+      category: 'laser',
       type: 'before-after',
-      title: 'Tratamento de Estrias',
-      description: 'Redução de estrias após tratamento completo',
-      image: estriasImages[0],
+      title: 'Tratamento de Estrias (StriaPro)',
+      description: 'Resultados após o tratamento de estrias com o método StriaPro',
+      image: '/imagens/estrias.jpeg',
       duration: '6 meses',
       rating: 5
     }
@@ -143,14 +78,7 @@ interface GalleryItem {
     'Tratamento de Estrias (StriaPro)'
   ];
 
-  const filteredItems = selectedCategory === 'all'
-    ? galleryItems
-    : selectedCategory === 'especiais'
-      ? [
-          ...galleryItems.filter(item => especiaisIds.includes(item.title) && item.title !== 'Tratamento de Estrias'),
-          galleryItems.find(item => item.id === 'estrias')
-        ].filter((item): item is GalleryItem => Boolean(item))
-      : galleryItems.filter(item => item.category === selectedCategory)
+  const filteredItems = galleryItems
 
   const openModal = (item: GalleryItem) => {
     setSelectedImage(item)
@@ -186,13 +114,6 @@ interface GalleryItem {
             com as transformações dos nossos clientes.
           </p>
         </div>
-      </section>
-
-      {/* Adicionar banner SEO no início da galeria */}
-      <section className="py-4 bg-yellow-50 text-center">
-        <p className="text-lg text-yellow-700 font-semibold">
-          Resultados reais de tratamentos estéticos em Santa Maria da Feira. Veja antes e depois de estrias, depilação a laser, limpeza de pele e mais.
-        </p>
       </section>
 
       {/* Filter Tabs */}
@@ -306,7 +227,10 @@ interface GalleryItem {
                 <CarouselContent>
                   {estriasImages.map((img, idx) => (
                     <CarouselItem key={idx}>
-                      <Image src={img} alt={`Tratamento de Estrias ${idx+1}`} width={400} height={256} className="w-full h-64 object-contain rounded-2xl bg-black" />
+                      <Image src={img.src} alt={`Tratamento de Estrias ${idx+1}`} width={400} height={256} className="w-full h-64 object-contain rounded-2xl bg-black" />
+                      {img.legenda && (
+                        <div className="text-center mt-2 text-base font-semibold text-gray-800">{img.legenda}</div>
+                      )}
                     </CarouselItem>
                   ))}
                 </CarouselContent>

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '../components/ui/button'
 import { Star, Award, Users, Clock, ArrowRight, CheckCircle } from 'lucide-react'
+import SimpleCarousel from '@/components/SimpleCarousel';
 
 export const metadata: Metadata = {
   title: 'Clínica de Estética em Santa Maria da Feira | Tratamentos Faciais, Corporais e Laser',
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Villa Beauty Clinic - Clínica de Estética em Santa Maria da Feira',
-    description: 'Clínica de estética e beleza em Santa Maria da Feira. Tratamentos faciais, laser estético, depilação, rejuvenescimento e tratamento de estrias (StriaPro). 15+ anos de experiência.',
+    description: 'Clínica de estética e beleza em Santa Maria da Feira. Tratamentos faciais, laser estético, depilação, rejuvenescimento e tratamento de estrias (StriaPro). 4+ anos de experiência na área.',
     url: 'https://villabeautyclinic.pages.dev',
     images: [
       {
@@ -55,44 +56,22 @@ export const runtime = 'edge';
 export default function Home() {
   const stats = [
     { icon: Users, number: '5000+', label: 'Clientes Satisfeitos' },
-    { icon: Award, number: '15+', label: 'Anos de Experiência' },
     { icon: Star, number: '4.9', label: 'Avaliação Média' },
     { icon: Clock, number: '24h', label: 'Suporte Disponível' },
   ]
 
   const services = [
     {
-      title: 'Tratamentos Faciais',
-      description: 'Rejuvenescimento e cuidados especializados para o rosto',
-      image: '/facial-treatment.jpg',
-      features: ['Limpeza Profunda', 'Hidratação', 'Anti-idade'],
-      slug: 'tratamentos-faciais'
-    },
-    {
       title: 'Laser Estético',
       description: 'Tecnologia avançada para diversos tratamentos',
-      image: '/laser-treatment.jpg',
+      image: '/consultorio.jpeg',
       features: ['Depilação Laser', 'Rejuvenescimento', 'Remoção de Manchas'],
       slug: 'laser-estetico'
     },
     {
-      title: 'Tratamentos Corporais',
-      description: 'Cuidados completos para o corpo',
-      image: '/hero-image.jpg',
-      features: ['Modelagem Corporal', 'Drenagem Linfática', 'Redução de Medidas'],
-      slug: 'tratamentos-corporais'
-    },
-    {
-      title: 'Tratamentos Especiais',
-      description: 'Protocolos exclusivos e personalizados para necessidades específicas',
-      image: '/hero-image.jpg',
-      features: ['Peeling Químico', 'Microagulhamento', 'Tratamentos Avançados'],
-      slug: 'tratamentos-especiais'
-    },
-    {
       title: 'Tratamento de Estrias (StriaPro)',
       description: 'Livre-se das estrias de forma rápida e confortável com o método StriaPro! Resultados visíveis em apenas 15 dias. Técnica personalizada para cada tipo de estria, adaptada à largura e profundidade, garantindo máxima eficácia e conforto.',
-      image: '/hero-image.jpg',
+      image: '/imagens/estrias.jpeg',
       features: ['Recuperação em 15 dias', 'Conforto máximo', 'Personalização para cada paciente'],
       slug: 'tratamento-estrias-striapro'
     }
@@ -115,7 +94,7 @@ export default function Home() {
               "name": "Villa Beauty Clinic",
               "description": "Clínica de estética e beleza em Santa Maria da Feira",
               "url": "https://villabeautyclinic.pages.dev",
-              "telephone": "+351-XXX-XXX-XXX",
+              "telephone": "+351-916-248-032",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Rua Principal",
@@ -210,8 +189,8 @@ export default function Home() {
 
         {/* Stats Section */}
         <section className="py-16 bg-yellow-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="w-full flex justify-center">
+            <div className="max-w-7xl grid grid-cols-2 md:grid-cols-4 justify-center mx-auto justify-items-center w-fit">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-700 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -242,7 +221,6 @@ export default function Home() {
                 <div className="space-y-4 mb-8">
                   {[
                     'Equipamentos de última geração',
-                    'Profissionais certificados e experientes',
                     'Ambiente seguro e higiénico',
                     'Tratamentos personalizados',
                     'Acompanhamento pós-tratamento'
@@ -259,22 +237,18 @@ export default function Home() {
                   size="default"
                   className="bg-gradient-to-r from-yellow-400 to-yellow-700 hover:from-yellow-500 hover:to-yellow-800 text-white px-6 py-3 rounded-full"
                 >
-                  <Link href="/sobre">Saiba Mais Sobre Nós</Link>
+                  <Link href="/sobre">Saiba Mais Sobre Mim</Link>
                 </Button>
               </div>
               <div className="relative">
-                <Image 
-                  src="/hero-image.jpg" 
-                  alt="Villa Beauty Clinic Interior - Clínica de Estética em Santa Maria da Feira" 
+                <SimpleCarousel 
+                  images={[
+                    { src: '/sala.jpeg', alt: 'Sala Villa Beauty Clinic' },
+                    { src: '/consultorio.jpeg', alt: 'Consultório Villa Beauty Clinic' }
+                  ]}
                   width={600}
                   height={400}
-                  className="rounded-2xl shadow-2xl"
-                  priority
                 />
-                <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
-                  <div className="text-2xl font-bold text-yellow-700">15+</div>
-                  <div className="text-gray-600">Anos de Experiência</div>
-                </div>
               </div>
             </div>
           </div>
@@ -284,10 +258,10 @@ export default function Home() {
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Nossos Tratamentos</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Meus Tratamentos</h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Oferecemos uma ampla gama de tratamentos estéticos com tecnologia avançada e cuidado personalizado em Santa Maria da Feira.<br/>
-                Resultados reais em tratamentos faciais, corporais, depilação a laser e estrias em Santa Maria da Feira.
+                Ofereço uma ampla gama de tratamentos estéticos com tecnologia avançada e cuidado personalizado em Santa Maria da Feira.<br/>
+                Resultados reais, certificação profissional e atendimento de excelência.
               </p>
             </div>
             
@@ -319,13 +293,12 @@ export default function Home() {
                       className="w-full bg-gradient-to-r from-yellow-400 to-yellow-700 text-white"
                     >
                       <Link href={`/servicos?categoria=${
-                        service.title === 'Tratamentos Faciais' ? 'facial' :
                         service.title === 'Laser Estético' ? 'laser' :
-                        service.title === 'Tratamentos Corporais' ? 'corporal' :
-                        service.title === 'Tratamentos Especiais' ? 'especial' :
                         service.title === 'Tratamento de Estrias (StriaPro)' ? 'especial' :
                         'facial'
-                      }`}>Ver Detalhes</Link>
+                      }`}>
+                        Ver Detalhes
+                      </Link>
                     </Button>
                   </div>
                 </article>

@@ -37,7 +37,7 @@ export default function EstriasPage() {
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
-            <Image src="/imagens/WhatsApp-Image-2025-07-15-at-01.00.39.jpeg" alt="Antes e depois do tratamento de estrias StriaPro em Santa Maria da Feira" width={500} height={350} className="w-full h-64 object-contain rounded-2xl bg-black" />
+            <Image src="/imagens/estrias.png" alt="Antes e depois do tratamento de estrias StriaPro em Santa Maria da Feira" width={500} height={350} className="w-full h-64 object-contain rounded-2xl bg-black" />
           </div>
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Por que escolher o StriaPro?</h2>
@@ -58,9 +58,9 @@ export default function EstriasPage() {
       </section>
       <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Image src="/imagens/WhatsApp-Image-2025-07-15-at-01.00.39-(1).jpeg" alt="Resultado tratamento estrias StriaPro Santa Maria da Feira 1" width={400} height={256} className="w-full h-64 object-contain rounded-2xl bg-black" />
-          <Image src="/imagens/WhatsApp-Image-2025-07-15-at-01.00.39-(2).jpeg" alt="Resultado tratamento estrias StriaPro Santa Maria da Feira 2" width={400} height={256} className="w-full h-64 object-contain rounded-2xl bg-black" />
-          <Image src="/imagens/WhatsApp-Image-2025-07-15-at-01.00.40.jpeg" alt="Resultado tratamento estrias StriaPro Santa Maria da Feira 3" width={400} height={256} className="w-full h-64 object-contain rounded-2xl bg-black" />
+          <Image src="/imagens/estrias.jpeg" alt="Resultado tratamento estrias StriaPro Santa Maria da Feira 1" width={400} height={256} className="w-full h-64 object-contain rounded-2xl bg-black" />
+          <Image src="/imagens/estrias.jpeg" alt="Resultado tratamento estrias StriaPro Santa Maria da Feira 2" width={400} height={256} className="w-full h-64 object-contain rounded-2xl bg-black" />
+          <Image src="/imagens/estrias.jpeg" alt="Resultado tratamento estrias StriaPro Santa Maria da Feira 3" width={400} height={256} className="w-full h-64 object-contain rounded-2xl bg-black" />
         </div>
       </section>
       <section className="py-16 bg-yellow-100 text-center">

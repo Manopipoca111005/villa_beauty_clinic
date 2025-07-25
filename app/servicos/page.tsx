@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     url: 'https://villabeautyclinic.pages.dev/servicos',
     images: [
       {
-        url: '/laser-treatment.jpg',
+        url: '/imagens/estrias.jpeg',
         width: 1200,
         height: 630,
         alt: 'Tratamentos Estéticos - Villa Beauty Clinic',

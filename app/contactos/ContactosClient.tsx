@@ -71,14 +71,14 @@ function ContactContent() {
     {
       icon: Phone,
       title: 'Telefone',
-      details: ['+351 916 248 032', '+351 916 248 032'],
+      details: ['+351 916 248 032'],
       action: 'tel:+351912248032'
     },
     {
       icon: Mail,
       title: 'Email',
-      details: ['info@villabeauty.pt', 'marcacoes@villabeauty.pt'],
-      action: 'mailto:info@villabeauty.pt'
+      details: ['villabeauty@outlook.pt'],
+      action: 'mailto:villabeauty@outlook.pt'
     },
     {
       icon: MapPin,
@@ -136,7 +136,7 @@ function ContactContent() {
               "description": "Clínica de estética e beleza em Santa Maria da Feira",
               "url": "https://villabeautyclinic.pages.dev",
               "telephone": "+351916248032",
-              "email": "info@villabeauty.pt",
+              "email": "villabeauty@outlook.pt",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "R. Ferreira Castro",
@@ -392,14 +392,6 @@ function ContactContent() {
                 <div className="mt-8">
                   <h3 className="text-xl font-bold text-gray-900 mb-4">Siga-nos nas Redes Sociais</h3>
                   <div className="flex space-x-4">
-                    <a
-                      href="https://www.facebook.com/villabeautyclinic"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
-                    >
-                      <Facebook className="h-6 w-6 text-white" />
-                    </a>
                     <a
                       href="https://www.instagram.com/villa.beauty.clinic/"
                       target="_blank"

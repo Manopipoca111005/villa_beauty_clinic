@@ -19,130 +19,64 @@ import {
 
 // Tipos e funções auxiliares
 
-type CategoryId = 'facial' | 'laser' | 'corporal' | 'especiais';
+type CategoryId = 'laser';
 function getCategoriaFromQuery(searchParams: ReturnType<typeof useSearchParams>): CategoryId {
-  if (!searchParams) return 'facial';
+  if (!searchParams) return 'laser';
   const categoria = searchParams.get('categoria');
-  if (!categoria) return 'facial';
-  if (categoria.includes('facial')) return 'facial';
+  if (!categoria) return 'laser';
   if (categoria.includes('laser')) return 'laser';
-  if (categoria.includes('corporal')) return 'corporal';
-  if (categoria.includes('especial')) return 'especiais';
-  return 'facial';
+  return 'laser';
 }
 
 export default function ServicosClient() {
   const searchParams = useSearchParams();
-  const [activeCategory, setActiveCategory] = useState<CategoryId>('facial');
+  const [activeCategory, setActiveCategory] = useState<CategoryId>('laser');
 
   useEffect(() => {
     setActiveCategory(getCategoriaFromQuery(searchParams));
   }, [searchParams]);
 
   const categories = [
-    { id: 'facial', name: 'Tratamentos Faciais', icon: Sparkles },
-    { id: 'laser', name: 'Laser Estético', icon: Zap },
-    { id: 'corporal', name: 'Tratamentos Corporais', icon: Heart },
-    { id: 'especiais', name: 'Tratamentos Especiais', icon: Award }
+    { id: 'laser', name: 'Laser SHR', icon: Zap }
   ];
 
   const services = {
-    facial: [
-      {
-        name: 'Limpeza Facial Profunda',
-        description: 'Limpeza profunda e hidratação para todos os tipos de pele.',
-        price: '35 €',
-        image: '/facial-treatment.jpg'
-      },
-      {
-        name: 'Tratamento Anti-idade',
-        description: 'Rejuvenescimento facial com produtos de alta qualidade.',
-        price: '45 €',
-        image: '/facial-treatment.jpg'
-      },
-      {
-        name: 'Hidratação Intensiva',
-        description: 'Hidratação profunda para pele seca e desidratada.',
-        price: '30 €',
-        image: '/facial-treatment.jpg'
-      }
-    ],
     laser: [
       {
         name: 'Laser Corpo Inteiro Homem',
         description: 'Depilação a laser para todas as áreas do corpo, adaptado para homens.',
         price: '55 €',
-        image: '/laser-treatment.jpg'
+        image: '/consultorio.jpeg'
       },
       {
         name: 'Laser Corpo Inteiro Senhora',
         description: 'Depilação a laser para todas as áreas do corpo, para mulheres.',
         price: '50 €',
-        image: '/laser-treatment.jpg'
+        image: '/consultorio.jpeg'
       },
       {
         name: 'Laser 2 zonas',
         description: 'Escolha duas zonas do corpo para depilação a laser.',
         price: '35 €',
-        image: '/laser-treatment.jpg'
+        image: '/consultorio.jpeg'
       },
       {
         name: 'Laser 1 zona',
         description: 'Depilação a laser para uma zona específica do corpo.',
         price: '20 €',
-        image: '/laser-treatment.jpg'
+        image: '/consultorio.jpeg'
       },
       {
         name: 'Laser zona pequena',
         description: 'Buço, queixo ou linha da barba.',
         price: '10 €',
-        image: '/laser-treatment.jpg'
-      }
-    ],
-    corporal: [
-      {
-        name: 'Modelagem Corporal',
-        description: 'Tratamento para redução de medidas e modelagem do corpo.',
-        price: '40 €',
-        image: '/hero-image.jpg'
-      },
-      {
-        name: 'Drenagem Linfática',
-        description: 'Massagem para eliminação de toxinas e redução de inchaço.',
-        price: '35 €',
-        image: '/hero-image.jpg'
-      },
-      {
-        name: 'Redução de Medidas',
-        description: 'Tratamento específico para redução de gordura localizada.',
-        price: '45 €',
-        image: '/hero-image.jpg'
-      }
-    ],
-    especiais: [
-      {
-        name: 'Peeling Químico',
-        description: 'Renovação celular e tratamento de manchas e acne.',
-        price: '60 €',
-        image: '/hero-image.jpg'
-      },
-      {
-        name: 'Microagulhamento',
-        description: 'Tratamento para cicatrizes, rugas e rejuvenescimento.',
-        price: '70 €',
-        image: '/hero-image.jpg'
-      },
-      {
-        name: 'Tratamento Avançado',
-        description: 'Protocolos personalizados para necessidades específicas.',
-        price: '80 €',
-        image: '/hero-image.jpg'
+        image: '/consultorio.jpeg'
       },
       {
         name: 'Tratamento de Estrias (StriaPro)',
         description: 'Livre-se das estrias de forma rápida e confortável com o método StriaPro! O tratamento de estrias mais rápido e confortável do mercado, com resultados visíveis em apenas 15 dias. Técnica personalizada para cada tipo de estria, adaptada à largura e profundidade, garantindo máxima eficácia e conforto. Compatível com todos os fototipos de pele e até durante a amamentação.',
         price: 'Sob consulta',
-        image: '/imagens/estrias.jpg'
+        image: '/imagens/estrias.jpeg'
       }
     ]
   };

@@ -13,7 +13,6 @@ const Navbar = () => {
   const navigation = [
     { name: 'Início', href: '/' },
     { name: 'Serviços', href: '/servicos' },
-    { name: 'Sobre Nós', href: '/sobre' },
     { name: 'Galeria', href: '/galeria' },
     // { name: 'Marcação', href: '/marcacao' },
     { name: 'Contactos', href: '/contactos' },
@@ -33,7 +32,7 @@ const Navbar = () => {
                 className="flex items-center space-x-1 hover:text-yellow-800 transition-colors cursor-pointer"
               >
                 <Phone className="h-4 w-4" />
-                <span>+351 912 248 032</span>
+                <span>+351 916 248 032</span>
               </a>
               <a 
                 href="https://www.google.com/maps/dir//Villa+Beauty+Clinic,+R.+Ferreira+Castro,+4520-227+Santa+Maria+da+Feira/@40.9240729,-8.5610258,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0xd2381c603fc33e9:0x9dc06e90471a55d6!2m2!1d-8.5584509!2d40.9240689"
